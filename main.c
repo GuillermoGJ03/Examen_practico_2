@@ -10,11 +10,15 @@
 #include <avr/interrupt.h>
 #include <avr/pgmspace.h>
 
-const uint8_t temperatura PROGMEM = 50;
+uint8_t count_lamp = 4;
+uint8_t codigo_barrido = 0b11101111;
+uint8_t i = 0, selector;
 
 uint8_t f_read = 1, count = 0, count_int = 0;
 
-uint8_t valores[3] = {0,0,0};
+uint8_t valores[4] = {0,0,0,0};
+	
+const uint8_t temperatura PROGMEM = 50;
 
 ISR(INT0_vect);								// Switch interrupt (INT0)
 ISR(INT1_vect);								// Optical sensor interrupt (INT1)
@@ -29,7 +33,7 @@ int main(void){
 	DDRD |= (0 << PD3);						// Optical sensor pin
 	DDRA = 0b00000000;						// RFID pin
 	
-	DDRB |= (1 << PD4);						// Heater port (PWM = 0C1B)
+	DDRD |= (1 << PD4);						// Heater port (PWM = 0C1B)
 	DDRB |= (1 << PB0);						// Electro valve port
 	DDRC |= 0b11111111;						// 7 segments display port
 	
@@ -38,8 +42,8 @@ int main(void){
 	GICR = (1 << INT0) | (1 << INT1);
 	MCUCR = (1 << ISC00) | (1 << ISC11);
 	
-	// Timer interrupt
-	TIMSK = (1 << OCIE0);
+	// Timers interrupts
+	TIMSK = (1 << OCIE0) | (1 << OCIE2);
 	
 	sei();
 		
@@ -55,12 +59,17 @@ ISR(INT0_vect){
 		OCR1B = 0;
 		TCCR1A = (1 << COM1B1) | (1 << WGM11) |(1 << WGM10);					//Initialize PWM
 		TCCR1B = (1 << WGM12) | (1 << CS12) | (1 << CS10);						//Initialize PWM
+		
+		OCR2 = 39;
+		TCCR2 = (1 << WGM21) | (1 << CS22) | (1 << CS21) | (1 << CS20);
 		f_read = 0;
 	} else{
-		TCCR0 = 0;								//Turn down 100ms Timer
+		TCCR0 = 0;								// Turn off 100ms Timer
 		
-		TCCR1A = 0;								//Stop PWM
-		TCCR1B = 0;								//Stop PWM
+		TCCR1A = 0;								// Stop PWM
+		TCCR1B = 0;								// Stop PWM
+		
+		TCCR2 = 0;
 		f_read = 1;
 	}	
 }
@@ -78,10 +87,10 @@ ISR(TIMER0_COMP_vect){
 			count++;
 		} else if(count == 1){
 			OCR1A = 781;
-			if(valores[count] < temperatura){		//75% PWM
-				OCR1B = 586;
-			} else{										//25% PWM
-				OCR1B = 195;
+			if(valores[count] < temperatura){
+				OCR1B = 586;							// 75% PWM
+			} else{
+				OCR1B = 195;							// 25% PWM
 			}
 			count++;
 		} else if(count == 2){
@@ -93,20 +102,18 @@ ISR(TIMER0_COMP_vect){
 }
 
 ISR(INT1_vect){
-	TCCR0 = 0;										//Turn down 100ms Timer
-	TCCR1A = 0;										//Stop PWM
+	TCCR0 = 0;										// Turn down 100ms Timer
+	TCCR1A = 0;										// Stop PWM
 	TCCR1B = 0;
+	TCCR2 = 0;
 }
-		
-		
-// 		if(valores[count] < temperatura[0]){
-// 			OCR1A = 781;
-// 			OCR1B = 586;
-// 			TCCR1A = (1 << COM1B1) | (1 << WGM11) |(1 << WGM10);
-// 			TCCR1B = (1 << WGM12) | (1 << CS12) | (1 << CS10);
-// 		} else{
-// 			OCR1A = 781;
-// 			OCR1B = 195;
-// 			TCCR1A = (1 << COM1B1) | (1 << WGM11) |(1 << WGM10);
-// 			TCCR1B = (1 << WGM12) | (1 << CS12) | (1 << CS10);			
-// 		}
+
+ISR(TIMER2_COMP_vect){
+	selector = codigo_barrido & 0xF0;				// 0-Mask to 4 LSB
+	PORTC = selector + valores[i++];				//selector + value to 7 segments
+	codigo_barrido = (codigo_barrido << 1);			//shift left (next digit)
+	if(i == 4){
+		i = 0;
+		codigo_barrido = 0b11101111;
+	}
+}
