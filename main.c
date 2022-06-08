@@ -15,7 +15,7 @@
 #include <avr/pgmspace.h>
 
 #define RFID    PORTA
-#define V_BIT   1
+#define V_BIT   0
 
 uint8_t F_READ = 1;
 uint8_t cont = 0;
@@ -40,6 +40,7 @@ ISR(TIMER0_COMP_vect){
 	if (cont_delay != 3) cont_delay++;
 	else{
 		arr[cont] = RFID;
+		cont_delay = 0;
 
 		if (cont == 0){
 			if (arr[0] < 3) PORTB |= 1<<V_BIT;
