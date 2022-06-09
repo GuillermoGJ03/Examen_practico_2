@@ -83,9 +83,9 @@ ISR(TIMER0_COMP_vect){
 			count++;
 		} else if(count == 1){
 			temp = pgm_read_byte(&temperatura[0]);
-			if(valores[1] < temp){
+			if(valores[count] < temp){
 				OCR1B = 586;							// 75% PWM
-			} else if (valores[1] >= temp){
+			} else if (valores[count] >= temp){
 				OCR1B = 195;							// 25% PWM
 			}
 			count++;
