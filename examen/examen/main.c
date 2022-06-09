@@ -12,7 +12,6 @@
 #include <avr/interrupt.h>
 #include <avr/pgmspace.h>
 
-uint8_t count_lamp = 4;
 uint8_t codigo_barrido = 0b11101111;
 uint8_t i = 0, selector;
 
@@ -26,8 +25,6 @@ ISR(INT0_vect);								// Switch interrupt (INT0)
 ISR(INT1_vect);								// Optical sensor interrupt (INT1)
 ISR(TIMER0_COMP_vect);						// RFID read (TIMER0)
 ISR(TIMER2_COMP_vect);						// 7 segment display (TIMER2)
-
-void lectura();
 
 int main(void){
 	/*------ Port set up ------*/ 
@@ -57,10 +54,10 @@ ISR(INT0_vect){
 		OCR0 = 196;
 		TCCR0 = (1 << WGM01) | (1 << CS02) | (1 << CS00);						//Initialize 25ms Timer
 
-		OCR1A = 0;
+		OCR1A = 781;
 		OCR1B = 0;
-		TCCR1A = (1 << COM1B1) | (1 << WGM11) |(1 << WGM10);					//Initialize PWM
-		TCCR1B = (1 << WGM12) | (1 << CS12) | (1 << CS10);						//Initialize PWM
+		TCCR1A |= (1 << COM1B1) | (1 << WGM11) |(1 << WGM10);					//Initialize PWM
+		TCCR1B |= (1 << WGM13) | (1 << WGM12) | (1 << CS12) | (1 << CS10);						//Initialize PWM
 		
 		OCR2 = 39;
 		TCCR2 = (1 << WGM21) | (1 << CS22) | (1 << CS21) | (1 << CS20);
@@ -81,14 +78,8 @@ ISR(TIMER0_COMP_vect){
 		count_int = 0;		
 		valores[count] = PINA;
 		if(count == 0){
-			if(valores[count] < 3){
-				PORTB |= (1 << PB0);
-			} else{
-				PORTB &= ~(1 << PB0);
-			}
 			count++;
 		} else if(count == 1){
-			OCR1A = 781;
 			if(valores[count] < temperatura){
 				OCR1B = 586;							// 75% PWM
 			} else{
@@ -96,6 +87,11 @@ ISR(TIMER0_COMP_vect){
 			}
 			count++;
 		} else if(count == 2){
+			if(valores[count] < 3){
+				PORTB |= (1 << PB0);
+			} else{
+				PORTB &= ~(1 << PB0);
+			}
 			count = 0;
 		}
 	} else{
@@ -112,9 +108,9 @@ ISR(INT1_vect){
 
 ISR(TIMER2_COMP_vect){
 	selector = codigo_barrido & 0xF0;				// 0-Mask to 4 LSB
-	PORTC = selector + valores[i++];				//selector + value to 7 segments
-	codigo_barrido = (codigo_barrido << 1);			//shift left (next digit)
-	if(i == 4){
+	PORTC = selector + valores[i++];				// Selector + value to 7 segments
+	codigo_barrido = (codigo_barrido << 1);			// Shift left (next digit)
+	if(i >= 4){
 		i = 0;
 		codigo_barrido = 0b11101111;
 	}

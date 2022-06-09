@@ -19,8 +19,6 @@ Discarded input sections
  .bss           0x0000000000000000        0x0 main.o
  .progmemx.data.temperatura
                 0x0000000000000000        0x1 main.o
- .data.count_lamp
-                0x0000000000000000        0x1 main.o
  .text          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
  .data          0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
  .bss           0x0000000000000000        0x0 c:/program files/microchip/xc8/v2.31/avr/bin/../lib/gcc/avr/5.4.0/avr5/memx-const\libgcc.a(_exit.o)
@@ -352,20 +350,20 @@ END GROUP
 .debug_pubnames
  *(.debug_pubnames)
 
-.debug_info     0x0000000000000000      0x8fd
+.debug_info     0x0000000000000000      0x8e4
  *(.debug_info .gnu.linkonce.wi.*)
  .debug_info    0x0000000000000000      0x52e C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega16.o
- .debug_info    0x000000000000052e      0x3cf main.o
+ .debug_info    0x000000000000052e      0x3b6 main.o
 
 .debug_abbrev   0x0000000000000000      0x574
  *(.debug_abbrev)
  .debug_abbrev  0x0000000000000000      0x4e7 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega16.o
  .debug_abbrev  0x00000000000004e7       0x8d main.o
 
-.debug_line     0x0000000000000000      0x326
+.debug_line     0x0000000000000000      0x320
  *(.debug_line .debug_line.* .debug_line_end)
  .debug_line    0x0000000000000000      0x119 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega16.o
- .debug_line    0x0000000000000119      0x20d main.o
+ .debug_line    0x0000000000000119      0x207 main.o
 
 .debug_frame    0x0000000000000000       0xc4
  *(.debug_frame)
@@ -431,59 +429,59 @@ LOAD data_init
                 0x0000000000800068                i
 
 .text.__vector_19
-                0x00000000000000c0       0xac
+                0x00000000000000c0       0x94
  .text.__vector_19
-                0x00000000000000c0       0xac main.o
+                0x00000000000000c0       0x94 main.o
                 0x00000000000000c0                __vector_19
 
 .text.__vector_3
-                0x000000000000016c       0x62
+                0x0000000000000154       0x62
  .text.__vector_3
-                0x000000000000016c       0x62 main.o
-                0x000000000000016c                __vector_3
+                0x0000000000000154       0x62 main.o
+                0x0000000000000154                __vector_3
 
 .text.__vector_1
-                0x00000000000001ce       0x56
+                0x00000000000001b6       0x60
  .text.__vector_1
-                0x00000000000001ce       0x56 main.o
-                0x00000000000001ce                __vector_1
+                0x00000000000001b6       0x60 main.o
+                0x00000000000001b6                __vector_1
 
-.text.main      0x0000000000000224       0x2c
- .text.main     0x0000000000000224       0x2c main.o
-                0x0000000000000224                main
+.text.main      0x0000000000000216       0x2c
+ .text.main     0x0000000000000216       0x2c main.o
+                0x0000000000000216                main
 
 .text.__vector_2
-                0x0000000000000250       0x1c
+                0x0000000000000242       0x1c
  .text.__vector_2
-                0x0000000000000250       0x1c main.o
-                0x0000000000000250                __vector_2
+                0x0000000000000242       0x1c main.o
+                0x0000000000000242                __vector_2
 
-.text           0x000000000000026c        0x4
- .text          0x000000000000026c        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega16.o
-                0x000000000000026c                __vector_12
-                0x000000000000026c                __bad_interrupt
-                0x000000000000026c                __vector_6
-                0x000000000000026c                __vector_11
-                0x000000000000026c                __vector_13
-                0x000000000000026c                __vector_17
-                0x000000000000026c                __vector_7
-                0x000000000000026c                __vector_5
-                0x000000000000026c                __vector_4
-                0x000000000000026c                __vector_9
-                0x000000000000026c                __vector_15
-                0x000000000000026c                __vector_8
-                0x000000000000026c                __vector_14
-                0x000000000000026c                __vector_10
-                0x000000000000026c                __vector_16
-                0x000000000000026c                __vector_18
-                0x000000000000026c                __vector_20
+.text           0x000000000000025e        0x4
+ .text          0x000000000000025e        0x4 C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega16.o
+                0x000000000000025e                __vector_12
+                0x000000000000025e                __bad_interrupt
+                0x000000000000025e                __vector_6
+                0x000000000000025e                __vector_11
+                0x000000000000025e                __vector_13
+                0x000000000000025e                __vector_17
+                0x000000000000025e                __vector_7
+                0x000000000000025e                __vector_5
+                0x000000000000025e                __vector_4
+                0x000000000000025e                __vector_9
+                0x000000000000025e                __vector_15
+                0x000000000000025e                __vector_8
+                0x000000000000025e                __vector_14
+                0x000000000000025e                __vector_10
+                0x000000000000025e                __vector_16
+                0x000000000000025e                __vector_18
+                0x000000000000025e                __vector_20
 
-.data.f_read    0x0000000000800067        0x1 load address 0x0000000000000270
+.data.f_read    0x0000000000800067        0x1 load address 0x0000000000000262
  .data.f_read   0x0000000000800067        0x1 main.o
                 0x0000000000800067                f_read
 
 .data.codigo_barrido
-                0x0000000000800069        0x1 load address 0x0000000000000271
+                0x0000000000800069        0x1 load address 0x0000000000000263
  .data.codigo_barrido
                 0x0000000000800069        0x1 main.o
                 0x0000000000800069                codigo_barrido
