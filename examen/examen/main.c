@@ -3,7 +3,7 @@
  *
  * Created: 6/6/2022 4:43:25 PM
  * Author: Guillermo
- */ 
+ */
 
 #define F_CPU 8000000UL
 
@@ -18,36 +18,13 @@ uint8_t i = 0, selector;
 uint8_t f_read = 1, count = 0, count_int = 0;
 
 uint8_t valores[4] = {0,0,0,0};
-	
-const uint8_t temperatura PROGMEM = 50;
+
+const uint8_t temperatura PROGMEM = 5;
 
 ISR(INT0_vect);								// Switch interrupt (INT0)
 ISR(INT1_vect);								// Optical sensor interrupt (INT1)
 ISR(TIMER0_COMP_vect);						// RFID read (TIMER0)
 ISR(TIMER2_COMP_vect);						// 7 segment display (TIMER2)
-
-int main(void){
-	/*------ Port set up ------*/ 
-	DDRD |= (0 << PD2);						// Switch pin
-	DDRD |= (0 << PD3);						// Optical sensor pin
-	DDRA = 0b00000000;						// RFID pin
-	
-	DDRD |= (1 << PD4);						// Heater port (PWM = 0C1B)
-	DDRB |= (1 << PB0);						// Electro valve port
-	DDRC |= 0b11111111;						// 7 segments display port
-	
-	/*------ Control word ------*/
-	// External interrupts
-	GICR = (1 << INT0) | (1 << INT1);
-	MCUCR = (1 << ISC00) | (1 << ISC11);
-	
-	// Timers interrupts
-	TIMSK = (1 << OCIE0) | (1 << OCIE2);
-	
-	sei();
-		
-    while(1);
-}
 
 ISR(INT0_vect){
 	if(f_read == 1){
@@ -58,45 +35,45 @@ ISR(INT0_vect){
 		OCR1B = 0;
 		TCCR1A |= (1 << COM1B1) | (1 << WGM11) |(1 << WGM10);					//Initialize PWM
 		TCCR1B |= (1 << WGM13) | (1 << WGM12) | (1 << CS12) | (1 << CS10);						//Initialize PWM
-		
+
 		OCR2 = 39;
 		TCCR2 = (1 << WGM21) | (1 << CS22) | (1 << CS21) | (1 << CS20);
 		f_read = 0;
-	} else{
+		} else{
 		TCCR0 = 0;								// Turn off 100ms Timer
-		
+
 		TCCR1A = 0;								// Stop PWM
 		TCCR1B = 0;								// Stop PWM
-		
+
 		TCCR2 = 0;
 		f_read = 1;
-	}	
+	}
 }
 
 ISR(TIMER0_COMP_vect){
 	if(count_int == 3){
-		count_int = 0;		
+		count_int = 0;
 		valores[count] = PINA;
 		if(count == 0){
 			count++;
-		} else if(count == 1){
-			if(valores[count] < temperatura){
+			} else if(count == 1){
+			if(valores[1] < temperatura){
 				OCR1B = 586;							// 75% PWM
-			} else{
+				} else{
 				OCR1B = 195;							// 25% PWM
 			}
 			count++;
-		} else if(count == 2){
+			} else if(count == 2){
 			if(valores[count] < 3){
 				PORTB |= (1 << PB0);
-			} else{
+				} else{
 				PORTB &= ~(1 << PB0);
 			}
 			count = 0;
 		}
-	} else{
+		} else{
 		count_int++;
-	}	 
+	}
 }
 
 ISR(INT1_vect){
@@ -114,4 +91,31 @@ ISR(TIMER2_COMP_vect){
 		i = 0;
 		codigo_barrido = 0b11101111;
 	}
+}
+
+
+int main(void){
+	/*------ Port set up ------*/
+	DDRD |= (0 << PD2);						// Switch pin
+	DDRD |= (0 << PD3);						// Optical sensor pin
+	DDRA = 0b00000000;						// RFID pin
+
+	DDRD |= (1 << PD4);						// Heater port (PWM = 0C1B)
+	DDRB |= (1 << PB0);						// Electro valve port
+	DDRC |= 0b11111111;						// 7 segments display port
+
+
+
+	/*------ Control word ------*/
+	// External interrupts
+	GICR = (1 << INT0) | (1 << INT1);
+	MCUCR = (1 << ISC00) | (1 << ISC11);
+
+	// Timers interrupts
+	TIMSK = (1 << OCIE0) | (1 << OCIE2);
+
+	sei();
+
+    while(1);
+	return 0;
 }

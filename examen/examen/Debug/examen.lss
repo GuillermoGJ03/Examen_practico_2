@@ -5,79 +5,79 @@ Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
   0 .text         000000c0  00000000  00000000  000000d4  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000000  00800060  00800060  00000338  2**0
+  1 .data         00000000  00800060  00800060  0000033c  2**0
                   ALLOC, LOAD, DATA
-  2 .bss          00000001  00800060  00800060  00000338  2**0
+  2 .bss          00000001  00800060  00800060  0000033c  2**0
                   ALLOC
-  3 .comment      0000002f  00000000  00000000  00000338  2**0
+  3 .comment      0000002f  00000000  00000000  0000033c  2**0
                   CONTENTS, READONLY
-  4 .debug_aranges 00000040  00000000  00000000  00000367  2**0
+  4 .debug_aranges 00000040  00000000  00000000  0000036b  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   000008e4  00000000  00000000  000003a7  2**0
+  5 .debug_info   000008e6  00000000  00000000  000003ab  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 00000574  00000000  00000000  00000c8b  2**0
+  6 .debug_abbrev 00000574  00000000  00000000  00000c91  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   00000320  00000000  00000000  000011ff  2**0
+  7 .debug_line   00000320  00000000  00000000  00001205  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  000000c4  00000000  00000000  00001520  2**2
+  8 .debug_frame  000000c4  00000000  00000000  00001528  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    000001af  00000000  00000000  000015e4  2**0
+  9 .debug_str    000001af  00000000  00000000  000015ec  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    0000013e  00000000  00000000  00001793  2**0
+ 10 .debug_loc    0000013e  00000000  00000000  0000179b  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000030  00000000  00000000  000018d1  2**0
+ 11 .debug_ranges 00000030  00000000  00000000  000018d9  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .text         00000004  0000025e  0000025e  00000332  2**1
+ 12 .text         00000004  00000262  00000262  00000336  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 13 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00001904  2**2
+ 13 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  0000190c  2**2
                   CONTENTS, READONLY, DEBUGGING
- 14 .text.main    0000002c  00000216  00000216  000002ea  2**1
+ 14 .text.__vector_1 00000060  000001ba  000001ba  0000028e  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 15 .text.__vector_1 00000060  000001b6  000001b6  0000028a  2**1
+ 15 .text.__vector_19 00000098  000000c0  000000c0  00000194  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 16 .text.__vector_19 00000094  000000c0  000000c0  00000194  2**1
+ 16 .text.__vector_2 0000001c  00000246  00000246  0000031a  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 17 .text.__vector_2 0000001c  00000242  00000242  00000316  2**1
+ 17 .text.__vector_3 00000062  00000158  00000158  0000022c  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 18 .text.__vector_3 00000062  00000154  00000154  00000228  2**1
+ 18 .text.main    0000002c  0000021a  0000021a  000002ee  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 19 .bss.valores  00000004  00800061  00800061  00000338  2**0
+ 19 .bss.valores  00000004  00800061  00800061  0000033c  2**0
                   ALLOC
- 20 .bss.count_int 00000001  00800065  00800065  00000338  2**0
+ 20 .bss.count_int 00000001  00800065  00800065  0000033c  2**0
                   ALLOC
- 21 .bss.count    00000001  00800066  00800066  00000338  2**0
+ 21 .bss.count    00000001  00800066  00800066  0000033c  2**0
                   ALLOC
- 22 .data.f_read  00000001  00800067  00000262  00000336  2**0
+ 22 .data.f_read  00000001  00800067  00000266  0000033a  2**0
                   CONTENTS, ALLOC, LOAD, DATA
- 23 .bss.i        00000001  00800068  00800068  00000338  2**0
+ 23 .bss.i        00000001  00800068  00800068  0000033c  2**0
                   ALLOC
- 24 .data.codigo_barrido 00000001  00800069  00000263  00000337  2**0
+ 24 .data.codigo_barrido 00000001  00800069  00000267  0000033b  2**0
                   CONTENTS, ALLOC, LOAD, DATA
 
 Disassembly of section .text:
 
 00000000 <__vectors>:
    0:	0c 94 36 00 	jmp	0x6c	; 0x6c <__ctors_end>
-   4:	0c 94 db 00 	jmp	0x1b6	; 0x1b6 <__vector_1>
-   8:	0c 94 21 01 	jmp	0x242	; 0x242 <__vector_2>
-   c:	0c 94 aa 00 	jmp	0x154	; 0x154 <__vector_3>
-  10:	0c 94 2f 01 	jmp	0x25e	; 0x25e <__bad_interrupt>
-  14:	0c 94 2f 01 	jmp	0x25e	; 0x25e <__bad_interrupt>
-  18:	0c 94 2f 01 	jmp	0x25e	; 0x25e <__bad_interrupt>
-  1c:	0c 94 2f 01 	jmp	0x25e	; 0x25e <__bad_interrupt>
-  20:	0c 94 2f 01 	jmp	0x25e	; 0x25e <__bad_interrupt>
-  24:	0c 94 2f 01 	jmp	0x25e	; 0x25e <__bad_interrupt>
-  28:	0c 94 2f 01 	jmp	0x25e	; 0x25e <__bad_interrupt>
-  2c:	0c 94 2f 01 	jmp	0x25e	; 0x25e <__bad_interrupt>
-  30:	0c 94 2f 01 	jmp	0x25e	; 0x25e <__bad_interrupt>
-  34:	0c 94 2f 01 	jmp	0x25e	; 0x25e <__bad_interrupt>
-  38:	0c 94 2f 01 	jmp	0x25e	; 0x25e <__bad_interrupt>
-  3c:	0c 94 2f 01 	jmp	0x25e	; 0x25e <__bad_interrupt>
-  40:	0c 94 2f 01 	jmp	0x25e	; 0x25e <__bad_interrupt>
-  44:	0c 94 2f 01 	jmp	0x25e	; 0x25e <__bad_interrupt>
-  48:	0c 94 2f 01 	jmp	0x25e	; 0x25e <__bad_interrupt>
+   4:	0c 94 dd 00 	jmp	0x1ba	; 0x1ba <__vector_1>
+   8:	0c 94 23 01 	jmp	0x246	; 0x246 <__vector_2>
+   c:	0c 94 ac 00 	jmp	0x158	; 0x158 <__vector_3>
+  10:	0c 94 31 01 	jmp	0x262	; 0x262 <__bad_interrupt>
+  14:	0c 94 31 01 	jmp	0x262	; 0x262 <__bad_interrupt>
+  18:	0c 94 31 01 	jmp	0x262	; 0x262 <__bad_interrupt>
+  1c:	0c 94 31 01 	jmp	0x262	; 0x262 <__bad_interrupt>
+  20:	0c 94 31 01 	jmp	0x262	; 0x262 <__bad_interrupt>
+  24:	0c 94 31 01 	jmp	0x262	; 0x262 <__bad_interrupt>
+  28:	0c 94 31 01 	jmp	0x262	; 0x262 <__bad_interrupt>
+  2c:	0c 94 31 01 	jmp	0x262	; 0x262 <__bad_interrupt>
+  30:	0c 94 31 01 	jmp	0x262	; 0x262 <__bad_interrupt>
+  34:	0c 94 31 01 	jmp	0x262	; 0x262 <__bad_interrupt>
+  38:	0c 94 31 01 	jmp	0x262	; 0x262 <__bad_interrupt>
+  3c:	0c 94 31 01 	jmp	0x262	; 0x262 <__bad_interrupt>
+  40:	0c 94 31 01 	jmp	0x262	; 0x262 <__bad_interrupt>
+  44:	0c 94 31 01 	jmp	0x262	; 0x262 <__bad_interrupt>
+  48:	0c 94 31 01 	jmp	0x262	; 0x262 <__bad_interrupt>
   4c:	0c 94 60 00 	jmp	0xc0	; 0xc0 <_etext>
-  50:	0c 94 2f 01 	jmp	0x25e	; 0x25e <__bad_interrupt>
+  50:	0c 94 31 01 	jmp	0x262	; 0x262 <__bad_interrupt>
 
 00000054 <.dinit>:
   54:	00 60       	ori	r16, 0x00	; 0
@@ -85,13 +85,13 @@ Disassembly of section .text:
   58:	80 00       	.word	0x0080	; ????
   5a:	67 00       	.word	0x0067	; ????
   5c:	68 00       	.word	0x0068	; ????
-  5e:	02 62       	ori	r16, 0x22	; 34
+  5e:	02 66       	ori	r16, 0x62	; 98
   60:	00 68       	ori	r16, 0x80	; 128
   62:	00 69       	ori	r16, 0x90	; 144
   64:	80 00       	.word	0x0080	; ????
   66:	69 00       	.word	0x0069	; ????
   68:	6a 00       	.word	0x006a	; ????
-  6a:	02 63       	ori	r16, 0x32	; 50
+  6a:	02 67       	ori	r16, 0x72	; 114
 
 0000006c <__ctors_end>:
   6c:	11 24       	eor	r1, r1
@@ -134,7 +134,7 @@ Disassembly of section .text:
   ae:	ec 36       	cpi	r30, 0x6C	; 108
   b0:	f4 07       	cpc	r31, r20
   b2:	31 f7       	brne	.-52     	; 0x80 <__do_copy_data+0x8>
-  b4:	0e 94 0b 01 	call	0x216	; 0x216 <main>
+  b4:	0e 94 0d 01 	call	0x21a	; 0x21a <main>
   b8:	0c 94 5e 00 	jmp	0xbc	; 0xbc <_exit>
 
 000000bc <_exit>:
@@ -145,132 +145,85 @@ Disassembly of section .text:
 
 Disassembly of section .text:
 
-0000025e <__bad_interrupt>:
- 25e:	0c 94 00 00 	jmp	0	; 0x0 <__TEXT_REGION_ORIGIN__>
-
-Disassembly of section .text.main:
-
-00000216 <main>:
-ISR(TIMER0_COMP_vect);						// RFID read (TIMER0)
-ISR(TIMER2_COMP_vect);						// 7 segment display (TIMER2)
-
-int main(void){
-	/*------ Port set up ------*/ 
-	DDRD |= (0 << PD2);						// Switch pin
- 216:	81 b3       	in	r24, 0x11	; 17
- 218:	81 bb       	out	0x11, r24	; 17
-	DDRD |= (0 << PD3);						// Optical sensor pin
- 21a:	81 b3       	in	r24, 0x11	; 17
- 21c:	81 bb       	out	0x11, r24	; 17
-	DDRA = 0b00000000;						// RFID pin
- 21e:	1a ba       	out	0x1a, r1	; 26
-	
-	DDRD |= (1 << PD4);						// Heater port (PWM = 0C1B)
- 220:	81 b3       	in	r24, 0x11	; 17
- 222:	80 61       	ori	r24, 0x10	; 16
- 224:	81 bb       	out	0x11, r24	; 17
-	DDRB |= (1 << PB0);						// Electro valve port
- 226:	87 b3       	in	r24, 0x17	; 23
- 228:	81 60       	ori	r24, 0x01	; 1
- 22a:	87 bb       	out	0x17, r24	; 23
-	DDRC |= 0b11111111;						// 7 segments display port
- 22c:	84 b3       	in	r24, 0x14	; 20
- 22e:	8f ef       	ldi	r24, 0xFF	; 255
- 230:	84 bb       	out	0x14, r24	; 20
-	
-	/*------ Control word ------*/
-	// External interrupts
-	GICR = (1 << INT0) | (1 << INT1);
- 232:	80 ec       	ldi	r24, 0xC0	; 192
- 234:	8b bf       	out	0x3b, r24	; 59
-	MCUCR = (1 << ISC00) | (1 << ISC11);
- 236:	89 e0       	ldi	r24, 0x09	; 9
- 238:	85 bf       	out	0x35, r24	; 53
-	
-	// Timers interrupts
-	TIMSK = (1 << OCIE0) | (1 << OCIE2);
- 23a:	82 e8       	ldi	r24, 0x82	; 130
- 23c:	89 bf       	out	0x39, r24	; 57
-	
-	sei();
- 23e:	78 94       	sei
- 240:	ff cf       	rjmp	.-2      	; 0x240 <main+0x2a>
+00000262 <__bad_interrupt>:
+ 262:	0c 94 00 00 	jmp	0	; 0x0 <__TEXT_REGION_ORIGIN__>
 
 Disassembly of section .text.__vector_1:
 
-000001b6 <__vector_1>:
-		
-    while(1);
-}
+000001ba <__vector_1>:
+ISR(INT0_vect);								// Switch interrupt (INT0)
+ISR(INT1_vect);								// Optical sensor interrupt (INT1)
+ISR(TIMER0_COMP_vect);						// RFID read (TIMER0)
+ISR(TIMER2_COMP_vect);						// 7 segment display (TIMER2)
 
 ISR(INT0_vect){
- 1b6:	1f 92       	push	r1
- 1b8:	0f 92       	push	r0
- 1ba:	0f b6       	in	r0, 0x3f	; 63
+ 1ba:	1f 92       	push	r1
  1bc:	0f 92       	push	r0
- 1be:	11 24       	eor	r1, r1
- 1c0:	8f 93       	push	r24
- 1c2:	9f 93       	push	r25
+ 1be:	0f b6       	in	r0, 0x3f	; 63
+ 1c0:	0f 92       	push	r0
+ 1c2:	11 24       	eor	r1, r1
+ 1c4:	8f 93       	push	r24
+ 1c6:	9f 93       	push	r25
 	if(f_read == 1){
- 1c4:	80 91 67 00 	lds	r24, 0x0067	; 0x800067 <f_read>
- 1c8:	81 30       	cpi	r24, 0x01	; 1
- 1ca:	b9 f4       	brne	.+46     	; 0x1fa <__vector_1+0x44>
+ 1c8:	80 91 67 00 	lds	r24, 0x0067	; 0x800067 <f_read>
+ 1cc:	81 30       	cpi	r24, 0x01	; 1
+ 1ce:	b9 f4       	brne	.+46     	; 0x1fe <__vector_1+0x44>
 		OCR0 = 196;
- 1cc:	84 ec       	ldi	r24, 0xC4	; 196
- 1ce:	8c bf       	out	0x3c, r24	; 60
+ 1d0:	84 ec       	ldi	r24, 0xC4	; 196
+ 1d2:	8c bf       	out	0x3c, r24	; 60
 		TCCR0 = (1 << WGM01) | (1 << CS02) | (1 << CS00);						//Initialize 25ms Timer
- 1d0:	8d e0       	ldi	r24, 0x0D	; 13
- 1d2:	83 bf       	out	0x33, r24	; 51
+ 1d4:	8d e0       	ldi	r24, 0x0D	; 13
+ 1d6:	83 bf       	out	0x33, r24	; 51
 
 		OCR1A = 781;
- 1d4:	8d e0       	ldi	r24, 0x0D	; 13
- 1d6:	93 e0       	ldi	r25, 0x03	; 3
- 1d8:	9b bd       	out	0x2b, r25	; 43
- 1da:	8a bd       	out	0x2a, r24	; 42
+ 1d8:	8d e0       	ldi	r24, 0x0D	; 13
+ 1da:	93 e0       	ldi	r25, 0x03	; 3
+ 1dc:	9b bd       	out	0x2b, r25	; 43
+ 1de:	8a bd       	out	0x2a, r24	; 42
 		OCR1B = 0;
- 1dc:	19 bc       	out	0x29, r1	; 41
- 1de:	18 bc       	out	0x28, r1	; 40
+ 1e0:	19 bc       	out	0x29, r1	; 41
+ 1e2:	18 bc       	out	0x28, r1	; 40
 		TCCR1A |= (1 << COM1B1) | (1 << WGM11) |(1 << WGM10);					//Initialize PWM
- 1e0:	8f b5       	in	r24, 0x2f	; 47
- 1e2:	83 62       	ori	r24, 0x23	; 35
- 1e4:	8f bd       	out	0x2f, r24	; 47
+ 1e4:	8f b5       	in	r24, 0x2f	; 47
+ 1e6:	83 62       	ori	r24, 0x23	; 35
+ 1e8:	8f bd       	out	0x2f, r24	; 47
 		TCCR1B |= (1 << WGM13) | (1 << WGM12) | (1 << CS12) | (1 << CS10);						//Initialize PWM
- 1e6:	8e b5       	in	r24, 0x2e	; 46
- 1e8:	8d 61       	ori	r24, 0x1D	; 29
- 1ea:	8e bd       	out	0x2e, r24	; 46
-		
+ 1ea:	8e b5       	in	r24, 0x2e	; 46
+ 1ec:	8d 61       	ori	r24, 0x1D	; 29
+ 1ee:	8e bd       	out	0x2e, r24	; 46
+
 		OCR2 = 39;
- 1ec:	87 e2       	ldi	r24, 0x27	; 39
- 1ee:	83 bd       	out	0x23, r24	; 35
+ 1f0:	87 e2       	ldi	r24, 0x27	; 39
+ 1f2:	83 bd       	out	0x23, r24	; 35
 		TCCR2 = (1 << WGM21) | (1 << CS22) | (1 << CS21) | (1 << CS20);
- 1f0:	8f e0       	ldi	r24, 0x0F	; 15
- 1f2:	85 bd       	out	0x25, r24	; 37
+ 1f4:	8f e0       	ldi	r24, 0x0F	; 15
+ 1f6:	85 bd       	out	0x25, r24	; 37
 		f_read = 0;
- 1f4:	10 92 67 00 	sts	0x0067, r1	; 0x800067 <f_read>
- 1f8:	07 c0       	rjmp	.+14     	; 0x208 <__EEPROM_REGION_LENGTH__+0x8>
-	} else{
+ 1f8:	10 92 67 00 	sts	0x0067, r1	; 0x800067 <f_read>
+ 1fc:	07 c0       	rjmp	.+14     	; 0x20c <__EEPROM_REGION_LENGTH__+0xc>
+		} else{
 		TCCR0 = 0;								// Turn off 100ms Timer
- 1fa:	13 be       	out	0x33, r1	; 51
-		
+ 1fe:	13 be       	out	0x33, r1	; 51
+
 		TCCR1A = 0;								// Stop PWM
- 1fc:	1f bc       	out	0x2f, r1	; 47
+ 200:	1f bc       	out	0x2f, r1	; 47
 		TCCR1B = 0;								// Stop PWM
- 1fe:	1e bc       	out	0x2e, r1	; 46
-		
+ 202:	1e bc       	out	0x2e, r1	; 46
+
 		TCCR2 = 0;
- 200:	15 bc       	out	0x25, r1	; 37
+ 204:	15 bc       	out	0x25, r1	; 37
 		f_read = 1;
- 202:	81 e0       	ldi	r24, 0x01	; 1
- 204:	80 93 67 00 	sts	0x0067, r24	; 0x800067 <f_read>
-	}	
+ 206:	81 e0       	ldi	r24, 0x01	; 1
+ 208:	80 93 67 00 	sts	0x0067, r24	; 0x800067 <f_read>
+	}
 }
- 208:	9f 91       	pop	r25
- 20a:	8f 91       	pop	r24
- 20c:	0f 90       	pop	r0
- 20e:	0f be       	out	0x3f, r0	; 63
+ 20c:	9f 91       	pop	r25
+ 20e:	8f 91       	pop	r24
  210:	0f 90       	pop	r0
- 212:	1f 90       	pop	r1
- 214:	18 95       	reti
+ 212:	0f be       	out	0x3f, r0	; 63
+ 214:	0f 90       	pop	r0
+ 216:	1f 90       	pop	r1
+ 218:	18 95       	reti
 
 Disassembly of section .text.__vector_19:
 
@@ -289,8 +242,8 @@ ISR(TIMER0_COMP_vect){
 	if(count_int == 3){
   d2:	80 91 65 00 	lds	r24, 0x0065	; 0x800065 <count_int>
   d6:	83 30       	cpi	r24, 0x03	; 3
-  d8:	89 f5       	brne	.+98     	; 0x13c <__vector_19+0x7c>
-		count_int = 0;		
+  d8:	99 f5       	brne	.+102    	; 0x140 <__vector_19+0x80>
+		count_int = 0;
   da:	10 92 65 00 	sts	0x0065, r1	; 0x800065 <count_int>
 		valores[count] = PINA;
   de:	80 91 66 00 	lds	r24, 0x0066	; 0x800066 <count>
@@ -306,142 +259,193 @@ ISR(TIMER0_COMP_vect){
 			count++;
   f2:	8f 5f       	subi	r24, 0xFF	; 255
   f4:	80 93 66 00 	sts	0x0066, r24	; 0x800066 <count>
-  f8:	24 c0       	rjmp	.+72     	; 0x142 <__vector_19+0x82>
-		} else if(count == 1){
+  f8:	26 c0       	rjmp	.+76     	; 0x146 <__vector_19+0x86>
+			} else if(count == 1){
   fa:	81 30       	cpi	r24, 0x01	; 1
-  fc:	89 f4       	brne	.+34     	; 0x120 <__vector_19+0x60>
-			if(valores[count] < temperatura){
-  fe:	92 33       	cpi	r25, 0x32	; 50
- 100:	28 f4       	brcc	.+10     	; 0x10c <__vector_19+0x4c>
+  fc:	99 f4       	brne	.+38     	; 0x124 <__vector_19+0x64>
+			if(valores[1] < temperatura){
+  fe:	80 91 62 00 	lds	r24, 0x0062	; 0x800062 <_end+0x1>
+ 102:	85 30       	cpi	r24, 0x05	; 5
+ 104:	28 f4       	brcc	.+10     	; 0x110 <__vector_19+0x50>
 				OCR1B = 586;							// 75% PWM
- 102:	8a e4       	ldi	r24, 0x4A	; 74
- 104:	92 e0       	ldi	r25, 0x02	; 2
- 106:	99 bd       	out	0x29, r25	; 41
- 108:	88 bd       	out	0x28, r24	; 40
- 10a:	04 c0       	rjmp	.+8      	; 0x114 <__vector_19+0x54>
-			} else{
+ 106:	8a e4       	ldi	r24, 0x4A	; 74
+ 108:	92 e0       	ldi	r25, 0x02	; 2
+ 10a:	99 bd       	out	0x29, r25	; 41
+ 10c:	88 bd       	out	0x28, r24	; 40
+ 10e:	04 c0       	rjmp	.+8      	; 0x118 <__vector_19+0x58>
+				} else{
 				OCR1B = 195;							// 25% PWM
- 10c:	83 ec       	ldi	r24, 0xC3	; 195
- 10e:	90 e0       	ldi	r25, 0x00	; 0
- 110:	99 bd       	out	0x29, r25	; 41
- 112:	88 bd       	out	0x28, r24	; 40
+ 110:	83 ec       	ldi	r24, 0xC3	; 195
+ 112:	90 e0       	ldi	r25, 0x00	; 0
+ 114:	99 bd       	out	0x29, r25	; 41
+ 116:	88 bd       	out	0x28, r24	; 40
 			}
 			count++;
- 114:	80 91 66 00 	lds	r24, 0x0066	; 0x800066 <count>
- 118:	8f 5f       	subi	r24, 0xFF	; 255
- 11a:	80 93 66 00 	sts	0x0066, r24	; 0x800066 <count>
- 11e:	11 c0       	rjmp	.+34     	; 0x142 <__vector_19+0x82>
-		} else if(count == 2){
- 120:	82 30       	cpi	r24, 0x02	; 2
- 122:	79 f4       	brne	.+30     	; 0x142 <__vector_19+0x82>
+ 118:	80 91 66 00 	lds	r24, 0x0066	; 0x800066 <count>
+ 11c:	8f 5f       	subi	r24, 0xFF	; 255
+ 11e:	80 93 66 00 	sts	0x0066, r24	; 0x800066 <count>
+ 122:	11 c0       	rjmp	.+34     	; 0x146 <__vector_19+0x86>
+			} else if(count == 2){
+ 124:	82 30       	cpi	r24, 0x02	; 2
+ 126:	79 f4       	brne	.+30     	; 0x146 <__vector_19+0x86>
 			if(valores[count] < 3){
- 124:	93 30       	cpi	r25, 0x03	; 3
- 126:	20 f4       	brcc	.+8      	; 0x130 <__vector_19+0x70>
+ 128:	93 30       	cpi	r25, 0x03	; 3
+ 12a:	20 f4       	brcc	.+8      	; 0x134 <__vector_19+0x74>
 				PORTB |= (1 << PB0);
- 128:	88 b3       	in	r24, 0x18	; 24
- 12a:	81 60       	ori	r24, 0x01	; 1
- 12c:	88 bb       	out	0x18, r24	; 24
- 12e:	03 c0       	rjmp	.+6      	; 0x136 <__vector_19+0x76>
-			} else{
+ 12c:	88 b3       	in	r24, 0x18	; 24
+ 12e:	81 60       	ori	r24, 0x01	; 1
+ 130:	88 bb       	out	0x18, r24	; 24
+ 132:	03 c0       	rjmp	.+6      	; 0x13a <__vector_19+0x7a>
+				} else{
 				PORTB &= ~(1 << PB0);
- 130:	88 b3       	in	r24, 0x18	; 24
- 132:	8e 7f       	andi	r24, 0xFE	; 254
- 134:	88 bb       	out	0x18, r24	; 24
+ 134:	88 b3       	in	r24, 0x18	; 24
+ 136:	8e 7f       	andi	r24, 0xFE	; 254
+ 138:	88 bb       	out	0x18, r24	; 24
 			}
 			count = 0;
- 136:	10 92 66 00 	sts	0x0066, r1	; 0x800066 <count>
- 13a:	03 c0       	rjmp	.+6      	; 0x142 <__vector_19+0x82>
+ 13a:	10 92 66 00 	sts	0x0066, r1	; 0x800066 <count>
+ 13e:	03 c0       	rjmp	.+6      	; 0x146 <__vector_19+0x86>
 		}
-	} else{
+		} else{
 		count_int++;
- 13c:	8f 5f       	subi	r24, 0xFF	; 255
- 13e:	80 93 65 00 	sts	0x0065, r24	; 0x800065 <count_int>
-	}	 
+ 140:	8f 5f       	subi	r24, 0xFF	; 255
+ 142:	80 93 65 00 	sts	0x0065, r24	; 0x800065 <count_int>
+	}
 }
- 142:	ff 91       	pop	r31
- 144:	ef 91       	pop	r30
- 146:	9f 91       	pop	r25
- 148:	8f 91       	pop	r24
- 14a:	0f 90       	pop	r0
- 14c:	0f be       	out	0x3f, r0	; 63
+ 146:	ff 91       	pop	r31
+ 148:	ef 91       	pop	r30
+ 14a:	9f 91       	pop	r25
+ 14c:	8f 91       	pop	r24
  14e:	0f 90       	pop	r0
- 150:	1f 90       	pop	r1
- 152:	18 95       	reti
+ 150:	0f be       	out	0x3f, r0	; 63
+ 152:	0f 90       	pop	r0
+ 154:	1f 90       	pop	r1
+ 156:	18 95       	reti
 
 Disassembly of section .text.__vector_2:
 
-00000242 <__vector_2>:
+00000246 <__vector_2>:
 
 ISR(INT1_vect){
- 242:	1f 92       	push	r1
- 244:	0f 92       	push	r0
- 246:	0f b6       	in	r0, 0x3f	; 63
+ 246:	1f 92       	push	r1
  248:	0f 92       	push	r0
- 24a:	11 24       	eor	r1, r1
+ 24a:	0f b6       	in	r0, 0x3f	; 63
+ 24c:	0f 92       	push	r0
+ 24e:	11 24       	eor	r1, r1
 	TCCR0 = 0;										// Turn down 100ms Timer
- 24c:	13 be       	out	0x33, r1	; 51
+ 250:	13 be       	out	0x33, r1	; 51
 	TCCR1A = 0;										// Stop PWM
- 24e:	1f bc       	out	0x2f, r1	; 47
+ 252:	1f bc       	out	0x2f, r1	; 47
 	TCCR1B = 0;
- 250:	1e bc       	out	0x2e, r1	; 46
+ 254:	1e bc       	out	0x2e, r1	; 46
 	TCCR2 = 0;
- 252:	15 bc       	out	0x25, r1	; 37
+ 256:	15 bc       	out	0x25, r1	; 37
 }
- 254:	0f 90       	pop	r0
- 256:	0f be       	out	0x3f, r0	; 63
  258:	0f 90       	pop	r0
- 25a:	1f 90       	pop	r1
- 25c:	18 95       	reti
+ 25a:	0f be       	out	0x3f, r0	; 63
+ 25c:	0f 90       	pop	r0
+ 25e:	1f 90       	pop	r1
+ 260:	18 95       	reti
 
 Disassembly of section .text.__vector_3:
 
-00000154 <__vector_3>:
+00000158 <__vector_3>:
 
 ISR(TIMER2_COMP_vect){
- 154:	1f 92       	push	r1
- 156:	0f 92       	push	r0
- 158:	0f b6       	in	r0, 0x3f	; 63
+ 158:	1f 92       	push	r1
  15a:	0f 92       	push	r0
- 15c:	11 24       	eor	r1, r1
- 15e:	8f 93       	push	r24
- 160:	9f 93       	push	r25
- 162:	ef 93       	push	r30
- 164:	ff 93       	push	r31
+ 15c:	0f b6       	in	r0, 0x3f	; 63
+ 15e:	0f 92       	push	r0
+ 160:	11 24       	eor	r1, r1
+ 162:	8f 93       	push	r24
+ 164:	9f 93       	push	r25
+ 166:	ef 93       	push	r30
+ 168:	ff 93       	push	r31
 	selector = codigo_barrido & 0xF0;				// 0-Mask to 4 LSB
- 166:	80 91 69 00 	lds	r24, 0x0069	; 0x800069 <codigo_barrido>
- 16a:	80 7f       	andi	r24, 0xF0	; 240
- 16c:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__DATA_REGION_ORIGIN__>
+ 16a:	80 91 69 00 	lds	r24, 0x0069	; 0x800069 <codigo_barrido>
+ 16e:	80 7f       	andi	r24, 0xF0	; 240
+ 170:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__DATA_REGION_ORIGIN__>
 	PORTC = selector + valores[i++];				// Selector + value to 7 segments
- 170:	e0 91 68 00 	lds	r30, 0x0068	; 0x800068 <i>
- 174:	91 e0       	ldi	r25, 0x01	; 1
- 176:	9e 0f       	add	r25, r30
- 178:	90 93 68 00 	sts	0x0068, r25	; 0x800068 <i>
- 17c:	f0 e0       	ldi	r31, 0x00	; 0
- 17e:	ef 59       	subi	r30, 0x9F	; 159
- 180:	ff 4f       	sbci	r31, 0xFF	; 255
- 182:	90 81       	ld	r25, Z
- 184:	89 0f       	add	r24, r25
- 186:	85 bb       	out	0x15, r24	; 21
+ 174:	e0 91 68 00 	lds	r30, 0x0068	; 0x800068 <i>
+ 178:	91 e0       	ldi	r25, 0x01	; 1
+ 17a:	9e 0f       	add	r25, r30
+ 17c:	90 93 68 00 	sts	0x0068, r25	; 0x800068 <i>
+ 180:	f0 e0       	ldi	r31, 0x00	; 0
+ 182:	ef 59       	subi	r30, 0x9F	; 159
+ 184:	ff 4f       	sbci	r31, 0xFF	; 255
+ 186:	90 81       	ld	r25, Z
+ 188:	89 0f       	add	r24, r25
+ 18a:	85 bb       	out	0x15, r24	; 21
 	codigo_barrido = (codigo_barrido << 1);			// Shift left (next digit)
- 188:	80 91 69 00 	lds	r24, 0x0069	; 0x800069 <codigo_barrido>
- 18c:	88 0f       	add	r24, r24
- 18e:	80 93 69 00 	sts	0x0069, r24	; 0x800069 <codigo_barrido>
+ 18c:	80 91 69 00 	lds	r24, 0x0069	; 0x800069 <codigo_barrido>
+ 190:	88 0f       	add	r24, r24
+ 192:	80 93 69 00 	sts	0x0069, r24	; 0x800069 <codigo_barrido>
 	if(i >= 4){
- 192:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <i>
- 196:	84 30       	cpi	r24, 0x04	; 4
- 198:	28 f0       	brcs	.+10     	; 0x1a4 <__vector_3+0x50>
+ 196:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <i>
+ 19a:	84 30       	cpi	r24, 0x04	; 4
+ 19c:	28 f0       	brcs	.+10     	; 0x1a8 <__vector_3+0x50>
 		i = 0;
- 19a:	10 92 68 00 	sts	0x0068, r1	; 0x800068 <i>
+ 19e:	10 92 68 00 	sts	0x0068, r1	; 0x800068 <i>
 		codigo_barrido = 0b11101111;
- 19e:	8f ee       	ldi	r24, 0xEF	; 239
- 1a0:	80 93 69 00 	sts	0x0069, r24	; 0x800069 <codigo_barrido>
+ 1a2:	8f ee       	ldi	r24, 0xEF	; 239
+ 1a4:	80 93 69 00 	sts	0x0069, r24	; 0x800069 <codigo_barrido>
 	}
- 1a4:	ff 91       	pop	r31
- 1a6:	ef 91       	pop	r30
- 1a8:	9f 91       	pop	r25
- 1aa:	8f 91       	pop	r24
- 1ac:	0f 90       	pop	r0
- 1ae:	0f be       	out	0x3f, r0	; 63
+}
+ 1a8:	ff 91       	pop	r31
+ 1aa:	ef 91       	pop	r30
+ 1ac:	9f 91       	pop	r25
+ 1ae:	8f 91       	pop	r24
  1b0:	0f 90       	pop	r0
- 1b2:	1f 90       	pop	r1
- 1b4:	18 95       	reti
+ 1b2:	0f be       	out	0x3f, r0	; 63
+ 1b4:	0f 90       	pop	r0
+ 1b6:	1f 90       	pop	r1
+ 1b8:	18 95       	reti
+
+Disassembly of section .text.main:
+
+0000021a <main>:
+
+
+int main(void){
+	/*------ Port set up ------*/
+	DDRD |= (0 << PD2);						// Switch pin
+ 21a:	81 b3       	in	r24, 0x11	; 17
+ 21c:	81 bb       	out	0x11, r24	; 17
+	DDRD |= (0 << PD3);						// Optical sensor pin
+ 21e:	81 b3       	in	r24, 0x11	; 17
+ 220:	81 bb       	out	0x11, r24	; 17
+	DDRA = 0b00000000;						// RFID pin
+ 222:	1a ba       	out	0x1a, r1	; 26
+
+	DDRD |= (1 << PD4);						// Heater port (PWM = 0C1B)
+ 224:	81 b3       	in	r24, 0x11	; 17
+ 226:	80 61       	ori	r24, 0x10	; 16
+ 228:	81 bb       	out	0x11, r24	; 17
+	DDRB |= (1 << PB0);						// Electro valve port
+ 22a:	87 b3       	in	r24, 0x17	; 23
+ 22c:	81 60       	ori	r24, 0x01	; 1
+ 22e:	87 bb       	out	0x17, r24	; 23
+	DDRC |= 0b11111111;						// 7 segments display port
+ 230:	84 b3       	in	r24, 0x14	; 20
+ 232:	8f ef       	ldi	r24, 0xFF	; 255
+ 234:	84 bb       	out	0x14, r24	; 20
+
+
+
+	/*------ Control word ------*/
+	// External interrupts
+	GICR = (1 << INT0) | (1 << INT1);
+ 236:	80 ec       	ldi	r24, 0xC0	; 192
+ 238:	8b bf       	out	0x3b, r24	; 59
+	MCUCR = (1 << ISC00) | (1 << ISC11);
+ 23a:	89 e0       	ldi	r24, 0x09	; 9
+ 23c:	85 bf       	out	0x35, r24	; 53
+
+	// Timers interrupts
+	TIMSK = (1 << OCIE0) | (1 << OCIE2);
+ 23e:	82 e8       	ldi	r24, 0x82	; 130
+ 240:	89 bf       	out	0x39, r24	; 57
+
+	sei();
+ 242:	78 94       	sei
+ 244:	ff cf       	rjmp	.-2      	; 0x244 <main+0x2a>
