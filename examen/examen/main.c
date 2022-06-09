@@ -12,14 +12,14 @@
 #include <avr/interrupt.h>
 #include <avr/pgmspace.h>
 
-uint8_t codigo_barrido = 0b11101111;
+uint8_t codigo_barrido = 0b11011111;
 uint8_t i = 0, selector;
 
 uint8_t f_read = 1, count = 0, count_int = 0;
 
-uint8_t valores[4] = {0,0,0,0};
+uint8_t valores[3] = {0,0,0};
 	
-const uint8_t temperatura PROGMEM = 50;
+const uint8_t temperatura PROGMEM = 4;
 
 ISR(INT0_vect);								// Switch interrupt (INT0)
 ISR(INT1_vect);								// Optical sensor interrupt (INT1)
@@ -110,8 +110,8 @@ ISR(TIMER2_COMP_vect){
 	selector = codigo_barrido & 0xF0;				// 0-Mask to 4 LSB
 	PORTC = selector + valores[i++];				// Selector + value to 7 segments
 	codigo_barrido = (codigo_barrido << 1);			// Shift left (next digit)
-	if(i >= 4){
+	if(i > 2){
 		i = 0;
-		codigo_barrido = 0b11101111;
+		codigo_barrido = 0b11011111;
 	}
 }

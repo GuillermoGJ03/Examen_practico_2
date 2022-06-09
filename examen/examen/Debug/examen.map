@@ -267,6 +267,7 @@ END GROUP
  *(.gnu.linkonce.d*)
  *(.gnu.linkonce.r*)
                 0x0000000000800060                . = ALIGN (0x2)
+ *fill*         0x0000000000800060        0x0 
                 0x0000000000800060                _edata = .
                 [!provide]                        PROVIDE (__data_end, .)
 
@@ -411,22 +412,22 @@ LOAD data_init
  .note.gnu.avr.deviceinfo
                 0x0000000000000000       0x3c C:/Program Files (x86)/Atmel/Studio/7.0/Packs/atmel/ATmega_DFP/1.6.364/xc8/avr/lib/avr5/memx-const/crtatmega16.o
 
-.bss.valores    0x0000000000800061        0x4
- .bss.valores   0x0000000000800061        0x4 main.o
+.bss.valores    0x0000000000800061        0x3
+ .bss.valores   0x0000000000800061        0x3 main.o
                 0x0000000000800061                valores
 
-.bss.count_int  0x0000000000800065        0x1
+.bss.count_int  0x0000000000800064        0x1
  .bss.count_int
-                0x0000000000800065        0x1 main.o
-                0x0000000000800065                count_int
+                0x0000000000800064        0x1 main.o
+                0x0000000000800064                count_int
 
-.bss.count      0x0000000000800066        0x1
- .bss.count     0x0000000000800066        0x1 main.o
-                0x0000000000800066                count
+.bss.count      0x0000000000800065        0x1
+ .bss.count     0x0000000000800065        0x1 main.o
+                0x0000000000800065                count
 
-.bss.i          0x0000000000800068        0x1
- .bss.i         0x0000000000800068        0x1 main.o
-                0x0000000000800068                i
+.bss.i          0x0000000000800067        0x1
+ .bss.i         0x0000000000800067        0x1 main.o
+                0x0000000000800067                i
 
 .text.__vector_19
                 0x00000000000000c0       0x94
@@ -476,12 +477,12 @@ LOAD data_init
                 0x000000000000025e                __vector_18
                 0x000000000000025e                __vector_20
 
-.data.f_read    0x0000000000800067        0x1 load address 0x0000000000000262
- .data.f_read   0x0000000000800067        0x1 main.o
-                0x0000000000800067                f_read
+.data.f_read    0x0000000000800066        0x1 load address 0x0000000000000262
+ .data.f_read   0x0000000000800066        0x1 main.o
+                0x0000000000800066                f_read
 
 .data.codigo_barrido
-                0x0000000000800069        0x1 load address 0x0000000000000263
+                0x0000000000800068        0x1 load address 0x0000000000000263
  .data.codigo_barrido
-                0x0000000000800069        0x1 main.o
-                0x0000000000800069                codigo_barrido
+                0x0000000000800068        0x1 main.o
+                0x0000000000800068                codigo_barrido

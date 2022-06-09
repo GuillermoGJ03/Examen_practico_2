@@ -3,55 +3,55 @@ examen.elf:     file format elf32-avr
 
 Sections:
 Idx Name          Size      VMA       LMA       File off  Algn
-  0 .text         000000c0  00000000  00000000  000000d4  2**1
+  0 .text         000000c0  00000000  00000000  00000114  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
-  1 .data         00000000  00800060  00800060  00000338  2**0
-                  ALLOC, LOAD, DATA
-  2 .bss          00000001  00800060  00800060  00000338  2**0
+  1 .data         00000000  00800060  000000c0  00000268  2**0
                   ALLOC
-  3 .comment      0000002f  00000000  00000000  00000338  2**0
+  2 .bss          00000001  00800060  00800060  00000378  2**0
+                  ALLOC
+  3 .comment      0000002f  00000000  00000000  00000378  2**0
                   CONTENTS, READONLY
-  4 .debug_aranges 00000040  00000000  00000000  00000367  2**0
+  4 .debug_aranges 00000040  00000000  00000000  000003a7  2**0
                   CONTENTS, READONLY, DEBUGGING
-  5 .debug_info   000008e4  00000000  00000000  000003a7  2**0
+  5 .debug_info   000008e4  00000000  00000000  000003e7  2**0
                   CONTENTS, READONLY, DEBUGGING
-  6 .debug_abbrev 00000574  00000000  00000000  00000c8b  2**0
+  6 .debug_abbrev 00000574  00000000  00000000  00000ccb  2**0
                   CONTENTS, READONLY, DEBUGGING
-  7 .debug_line   00000320  00000000  00000000  000011ff  2**0
+  7 .debug_line   00000320  00000000  00000000  0000123f  2**0
                   CONTENTS, READONLY, DEBUGGING
-  8 .debug_frame  000000c4  00000000  00000000  00001520  2**2
+  8 .debug_frame  000000c4  00000000  00000000  00001560  2**2
                   CONTENTS, READONLY, DEBUGGING
-  9 .debug_str    000001af  00000000  00000000  000015e4  2**0
+  9 .debug_str    000001af  00000000  00000000  00001624  2**0
                   CONTENTS, READONLY, DEBUGGING
- 10 .debug_loc    0000013e  00000000  00000000  00001793  2**0
+ 10 .debug_loc    0000013e  00000000  00000000  000017d3  2**0
                   CONTENTS, READONLY, DEBUGGING
- 11 .debug_ranges 00000030  00000000  00000000  000018d1  2**0
+ 11 .debug_ranges 00000030  00000000  00000000  00001911  2**0
                   CONTENTS, READONLY, DEBUGGING
- 12 .text         00000004  0000025e  0000025e  00000332  2**1
+ 12 .text         00000004  0000025e  0000025e  00000372  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 13 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00001904  2**2
+ 13 .note.gnu.avr.deviceinfo 0000003c  00000000  00000000  00001944  2**2
                   CONTENTS, READONLY, DEBUGGING
- 14 .text.main    0000002c  00000216  00000216  000002ea  2**1
+ 14 .text.main    0000002c  00000216  00000216  0000032a  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 15 .text.__vector_1 00000060  000001b6  000001b6  0000028a  2**1
+ 15 .text.__vector_1 00000060  000001b6  000001b6  000002ca  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 16 .text.__vector_19 00000094  000000c0  000000c0  00000194  2**1
+ 16 .text.__vector_19 00000094  000000c0  000000c0  000001d4  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 17 .text.__vector_2 0000001c  00000242  00000242  00000316  2**1
+ 17 .text.__vector_2 0000001c  00000242  00000242  00000356  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 18 .text.__vector_3 00000062  00000154  00000154  00000228  2**1
+ 18 .text.__vector_3 00000062  00000154  00000154  00000268  2**1
                   CONTENTS, ALLOC, LOAD, READONLY, CODE
- 19 .bss.valores  00000004  00800061  00800061  00000338  2**0
+ 19 .bss.valores  00000003  00800061  00800061  00000378  2**0
                   ALLOC
- 20 .bss.count_int 00000001  00800065  00800065  00000338  2**0
+ 20 .bss.count_int 00000001  00800064  00800064  00000378  2**0
                   ALLOC
- 21 .bss.count    00000001  00800066  00800066  00000338  2**0
+ 21 .bss.count    00000001  00800065  00800065  00000378  2**0
                   ALLOC
- 22 .data.f_read  00000001  00800067  00000262  00000336  2**0
+ 22 .data.f_read  00000001  00800066  00000262  00000376  2**0
                   CONTENTS, ALLOC, LOAD, DATA
- 23 .bss.i        00000001  00800068  00800068  00000338  2**0
+ 23 .bss.i        00000001  00800067  00800067  00000378  2**0
                   ALLOC
- 24 .data.codigo_barrido 00000001  00800069  00000263  00000337  2**0
+ 24 .data.codigo_barrido 00000001  00800068  00000263  00000377  2**0
                   CONTENTS, ALLOC, LOAD, DATA
 
 Disassembly of section .text:
@@ -81,16 +81,16 @@ Disassembly of section .text:
 
 00000054 <.dinit>:
   54:	00 60       	ori	r16, 0x00	; 0
-  56:	00 67       	ori	r16, 0x70	; 112
+  56:	00 66       	ori	r16, 0x60	; 96
   58:	80 00       	.word	0x0080	; ????
-  5a:	67 00       	.word	0x0067	; ????
-  5c:	68 00       	.word	0x0068	; ????
+  5a:	66 00       	.word	0x0066	; ????
+  5c:	67 00       	.word	0x0067	; ????
   5e:	02 62       	ori	r16, 0x22	; 34
-  60:	00 68       	ori	r16, 0x80	; 128
-  62:	00 69       	ori	r16, 0x90	; 144
+  60:	00 67       	ori	r16, 0x70	; 112
+  62:	00 68       	ori	r16, 0x80	; 128
   64:	80 00       	.word	0x0080	; ????
-  66:	69 00       	.word	0x0069	; ????
-  68:	6a 00       	.word	0x006a	; ????
+  66:	68 00       	.word	0x0068	; ????
+  68:	69 00       	.word	0x0069	; ????
   6a:	02 63       	ori	r16, 0x32	; 50
 
 0000006c <__ctors_end>:
@@ -212,7 +212,7 @@ ISR(INT0_vect){
  1c0:	8f 93       	push	r24
  1c2:	9f 93       	push	r25
 	if(f_read == 1){
- 1c4:	80 91 67 00 	lds	r24, 0x0067	; 0x800067 <f_read>
+ 1c4:	80 91 66 00 	lds	r24, 0x0066	; 0x800066 <f_read>
  1c8:	81 30       	cpi	r24, 0x01	; 1
  1ca:	b9 f4       	brne	.+46     	; 0x1fa <__vector_1+0x44>
 		OCR0 = 196;
@@ -246,7 +246,7 @@ ISR(INT0_vect){
  1f0:	8f e0       	ldi	r24, 0x0F	; 15
  1f2:	85 bd       	out	0x25, r24	; 37
 		f_read = 0;
- 1f4:	10 92 67 00 	sts	0x0067, r1	; 0x800067 <f_read>
+ 1f4:	10 92 66 00 	sts	0x0066, r1	; 0x800066 <f_read>
  1f8:	07 c0       	rjmp	.+14     	; 0x208 <__EEPROM_REGION_LENGTH__+0x8>
 	} else{
 		TCCR0 = 0;								// Turn off 100ms Timer
@@ -261,7 +261,7 @@ ISR(INT0_vect){
  200:	15 bc       	out	0x25, r1	; 37
 		f_read = 1;
  202:	81 e0       	ldi	r24, 0x01	; 1
- 204:	80 93 67 00 	sts	0x0067, r24	; 0x800067 <f_read>
+ 204:	80 93 66 00 	sts	0x0066, r24	; 0x800066 <f_read>
 	}	
 }
  208:	9f 91       	pop	r25
@@ -287,13 +287,13 @@ ISR(TIMER0_COMP_vect){
   ce:	ef 93       	push	r30
   d0:	ff 93       	push	r31
 	if(count_int == 3){
-  d2:	80 91 65 00 	lds	r24, 0x0065	; 0x800065 <count_int>
+  d2:	80 91 64 00 	lds	r24, 0x0064	; 0x800064 <count_int>
   d6:	83 30       	cpi	r24, 0x03	; 3
   d8:	89 f5       	brne	.+98     	; 0x13c <__vector_19+0x7c>
 		count_int = 0;		
-  da:	10 92 65 00 	sts	0x0065, r1	; 0x800065 <count_int>
+  da:	10 92 64 00 	sts	0x0064, r1	; 0x800064 <count_int>
 		valores[count] = PINA;
-  de:	80 91 66 00 	lds	r24, 0x0066	; 0x800066 <count>
+  de:	80 91 65 00 	lds	r24, 0x0065	; 0x800065 <count>
   e2:	e8 2f       	mov	r30, r24
   e4:	f0 e0       	ldi	r31, 0x00	; 0
   e6:	99 b3       	in	r25, 0x19	; 25
@@ -305,13 +305,13 @@ ISR(TIMER0_COMP_vect){
   f0:	04 c0       	rjmp	.+8      	; 0xfa <__vector_19+0x3a>
 			count++;
   f2:	8f 5f       	subi	r24, 0xFF	; 255
-  f4:	80 93 66 00 	sts	0x0066, r24	; 0x800066 <count>
+  f4:	80 93 65 00 	sts	0x0065, r24	; 0x800065 <count>
   f8:	24 c0       	rjmp	.+72     	; 0x142 <__vector_19+0x82>
 		} else if(count == 1){
   fa:	81 30       	cpi	r24, 0x01	; 1
   fc:	89 f4       	brne	.+34     	; 0x120 <__vector_19+0x60>
 			if(valores[count] < temperatura){
-  fe:	92 33       	cpi	r25, 0x32	; 50
+  fe:	94 30       	cpi	r25, 0x04	; 4
  100:	28 f4       	brcc	.+10     	; 0x10c <__vector_19+0x4c>
 				OCR1B = 586;							// 75% PWM
  102:	8a e4       	ldi	r24, 0x4A	; 74
@@ -327,9 +327,9 @@ ISR(TIMER0_COMP_vect){
  112:	88 bd       	out	0x28, r24	; 40
 			}
 			count++;
- 114:	80 91 66 00 	lds	r24, 0x0066	; 0x800066 <count>
+ 114:	80 91 65 00 	lds	r24, 0x0065	; 0x800065 <count>
  118:	8f 5f       	subi	r24, 0xFF	; 255
- 11a:	80 93 66 00 	sts	0x0066, r24	; 0x800066 <count>
+ 11a:	80 93 65 00 	sts	0x0065, r24	; 0x800065 <count>
  11e:	11 c0       	rjmp	.+34     	; 0x142 <__vector_19+0x82>
 		} else if(count == 2){
  120:	82 30       	cpi	r24, 0x02	; 2
@@ -349,13 +349,13 @@ ISR(TIMER0_COMP_vect){
  134:	88 bb       	out	0x18, r24	; 24
 			}
 			count = 0;
- 136:	10 92 66 00 	sts	0x0066, r1	; 0x800066 <count>
+ 136:	10 92 65 00 	sts	0x0065, r1	; 0x800065 <count>
  13a:	03 c0       	rjmp	.+6      	; 0x142 <__vector_19+0x82>
 		}
 	} else{
 		count_int++;
  13c:	8f 5f       	subi	r24, 0xFF	; 255
- 13e:	80 93 65 00 	sts	0x0065, r24	; 0x800065 <count_int>
+ 13e:	80 93 64 00 	sts	0x0064, r24	; 0x800064 <count_int>
 	}	 
 }
  142:	ff 91       	pop	r31
@@ -408,14 +408,14 @@ ISR(TIMER2_COMP_vect){
  162:	ef 93       	push	r30
  164:	ff 93       	push	r31
 	selector = codigo_barrido & 0xF0;				// 0-Mask to 4 LSB
- 166:	80 91 69 00 	lds	r24, 0x0069	; 0x800069 <codigo_barrido>
+ 166:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <codigo_barrido>
  16a:	80 7f       	andi	r24, 0xF0	; 240
  16c:	80 93 60 00 	sts	0x0060, r24	; 0x800060 <__DATA_REGION_ORIGIN__>
 	PORTC = selector + valores[i++];				// Selector + value to 7 segments
- 170:	e0 91 68 00 	lds	r30, 0x0068	; 0x800068 <i>
+ 170:	e0 91 67 00 	lds	r30, 0x0067	; 0x800067 <i>
  174:	91 e0       	ldi	r25, 0x01	; 1
  176:	9e 0f       	add	r25, r30
- 178:	90 93 68 00 	sts	0x0068, r25	; 0x800068 <i>
+ 178:	90 93 67 00 	sts	0x0067, r25	; 0x800067 <i>
  17c:	f0 e0       	ldi	r31, 0x00	; 0
  17e:	ef 59       	subi	r30, 0x9F	; 159
  180:	ff 4f       	sbci	r31, 0xFF	; 255
@@ -423,18 +423,18 @@ ISR(TIMER2_COMP_vect){
  184:	89 0f       	add	r24, r25
  186:	85 bb       	out	0x15, r24	; 21
 	codigo_barrido = (codigo_barrido << 1);			// Shift left (next digit)
- 188:	80 91 69 00 	lds	r24, 0x0069	; 0x800069 <codigo_barrido>
+ 188:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <codigo_barrido>
  18c:	88 0f       	add	r24, r24
- 18e:	80 93 69 00 	sts	0x0069, r24	; 0x800069 <codigo_barrido>
-	if(i >= 4){
- 192:	80 91 68 00 	lds	r24, 0x0068	; 0x800068 <i>
- 196:	84 30       	cpi	r24, 0x04	; 4
+ 18e:	80 93 68 00 	sts	0x0068, r24	; 0x800068 <codigo_barrido>
+	if(i > 2){
+ 192:	80 91 67 00 	lds	r24, 0x0067	; 0x800067 <i>
+ 196:	83 30       	cpi	r24, 0x03	; 3
  198:	28 f0       	brcs	.+10     	; 0x1a4 <__vector_3+0x50>
 		i = 0;
- 19a:	10 92 68 00 	sts	0x0068, r1	; 0x800068 <i>
-		codigo_barrido = 0b11101111;
- 19e:	8f ee       	ldi	r24, 0xEF	; 239
- 1a0:	80 93 69 00 	sts	0x0069, r24	; 0x800069 <codigo_barrido>
+ 19a:	10 92 67 00 	sts	0x0067, r1	; 0x800067 <i>
+		codigo_barrido = 0b11011111;
+ 19e:	8f ed       	ldi	r24, 0xDF	; 223
+ 1a0:	80 93 68 00 	sts	0x0068, r24	; 0x800068 <codigo_barrido>
 	}
  1a4:	ff 91       	pop	r31
  1a6:	ef 91       	pop	r30
